@@ -30,7 +30,7 @@
     main{margin-top:-36px;position:relative;padding:0 20px 70px}
     .intro{background:var(--paper);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.65);padding:24px;border-radius:4px;margin-bottom:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
     .intro strong{color:var(--forest)}.stamp{border:1px solid var(--gold);color:#74501f;padding:10px 13px;text-align:center;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;transform:rotate(2deg)}
-    .story{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:46px;align-items:start;margin:58px 0 66px;padding:0 4px}.story-kicker{font-family:Georgia,serif;color:var(--rust);font-style:italic;font-size:1.12rem;margin-bottom:18px}.detail-shot{margin:0}.detail-shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}.detail-shot figcaption{margin-top:8px;color:var(--muted);font-size:.72rem}.story h2{font-family:Georgia,serif;color:var(--forest);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:500;line-height:1.05;margin:0 0 18px}.story p{color:var(--muted);font-size:1.02rem;margin:0 0 24px}.ritual{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.ritual div{padding:18px 15px 18px 0}.ritual div+div{border-left:1px solid var(--line);padding-left:18px}.ritual b{display:block;color:var(--forest);font-family:Georgia,serif;font-size:1.05rem}.ritual span{font-size:.78rem;color:var(--muted)}
+    .story{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:46px;align-items:start;margin:58px 0 66px;padding:0 4px}.story-kicker{font-family:Georgia,serif;color:var(--rust);font-style:italic;font-size:1.12rem;margin-bottom:18px}.detail-shot{margin:0}.detail-shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}.detail-shot figcaption{margin-top:8px;color:var(--muted);font-size:.72rem}.story h2{font-family:Georgia,serif;color:var(--forest);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:500;line-height:1.05;margin:0 0 18px}.story p{color:var(--muted);font-size:1.02rem;margin:0}
     .section-head{margin:46px 0 18px}.section-head h2{font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:500;margin:0;color:var(--forest)}.section-head p{margin:6px 0;color:var(--muted)}
     .direct-intro{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:46px 0 18px;padding:20px 22px;background:#e7ead9;border-top:3px solid var(--olive)}.direct-intro h2{font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:500;margin:0;color:var(--forest)}.direct-intro p{margin:5px 0 0;color:var(--muted)}.direct-badge{flex:0 0 auto;padding:8px 11px;background:var(--forest);color:#f2f2e8;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
     .options{display:grid;gap:18px}
@@ -49,7 +49,7 @@
     .message-preview{margin-top:18px;padding:13px 15px;border-left:3px solid var(--gold);background:rgba(255,255,255,.07);font-size:.86rem;color:#e7eadf;white-space:pre-wrap}
     .note{margin:28px 0 0;padding:18px;border:1px dashed #b9b19d;color:var(--muted);font-size:.82rem;background:rgba(255,253,247,.55)}.note strong{color:var(--ink)}
     footer{padding:25px 20px 45px;text-align:center;color:var(--muted);font-size:.78rem}.leaf{color:var(--olive)}
-    @media(max-width:760px){.hero{padding-top:48px}.hero-grid{grid-template-columns:1fr;gap:26px}.harvest-scene{width:min(440px,100%);margin:auto}.intro{grid-template-columns:1fr}.stamp{justify-self:start}.story{grid-template-columns:1fr;gap:12px;margin:44px 0}.ritual{grid-template-columns:1fr}.ritual div+div{border-left:0;border-top:1px solid var(--line);padding-left:0}.direct-intro{align-items:flex-start;flex-direction:column}.choice{grid-template-columns:1fr auto;gap:14px}.date{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}.price{grid-column:2}.route{grid-row:2;grid-column:1}.book{text-align:left}.actions .button{width:100%}}
+    @media(max-width:760px){.hero{padding-top:48px}.hero-grid{grid-template-columns:1fr;gap:26px}.harvest-scene{width:min(440px,100%);margin:auto}.intro{grid-template-columns:1fr}.stamp{justify-self:start}.story{grid-template-columns:1fr;gap:12px;margin:44px 0}.direct-intro{align-items:flex-start;flex-direction:column}.choice{grid-template-columns:1fr auto;gap:14px}.date{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}.price{grid-column:2}.route{grid-row:2;grid-column:1}.book{text-align:left}.actions .button{width:100%}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
     @media print{.hero{padding:35px 20px}.feedback,.book{display:none}main{margin-top:0}.option{break-inside:avoid;box-shadow:none}}
   </style>
@@ -87,11 +87,6 @@
       <div>
         <h2>Es geht nicht nur um Oliven. Es geht um die gemeinsame Zeit.</h2>
         <p>Jedes Jahr kommt ihr zur Olivenernte zusammen. Ihr breitet die großen Netze unter den Bäumen aus, löst die reifen Oliven mit langen Stangen aus den Zweigen und sammelt sie gemeinsam ein. Diese Tage verbinden Arbeit, Familie und Heimat – ein vertrautes Ritual, das euch wichtig ist und das ihr auch in Zukunft beibehalten möchtet.</p>
-        <div class="ritual">
-          <div><b>Gemeinsam beginnen</b><span>die Netze unter den Bäumen auslegen</span></div>
-          <div><b>Gemeinsam ernten</b><span>die Oliven mit langen Stangen lösen</span></div>
-          <div><b>Tradition bewahren</b><span>Jahr für Jahr zusammenkommen</span></div>
-        </div>
       </div>
     </section>
 
