@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#23351f">
-  <title>Hallo Alex – unsere Reise zur Olivenernte</title>
+  <title>Olivenernte in Portugal – für Alex</title>
   <style>
     :root{
       --forest:#23351f;--olive:#66733a;--sage:#aeb98b;--cream:#f5f0e3;
@@ -17,16 +17,20 @@
     body:before{content:"";position:fixed;inset:0;z-index:-2;background:
       radial-gradient(circle at 10% 10%,rgba(174,185,139,.35),transparent 28rem),
       radial-gradient(circle at 90% 30%,rgba(189,135,59,.12),transparent 24rem),var(--cream)}
-    .hero{position:relative;overflow:hidden;color:#fff;background:var(--forest);padding:72px 20px 84px}
+    .hero{position:relative;overflow:hidden;color:#fff;background:var(--forest);padding:58px 20px 82px}
     .hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.15);border-radius:50%;transform:rotate(-18deg)}
     .hero:before{width:420px;height:150px;right:-130px;top:30px}.hero:after{width:310px;height:110px;left:-120px;bottom:10px}
-    .wrap{width:min(980px,100%);margin:auto}.eyebrow{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:#d7dfbe;font-weight:800}
+    .wrap{width:min(1040px,100%);margin:auto}.eyebrow{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:#d7dfbe;font-weight:800}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:44px;align-items:center}
+    .hero-copy{position:relative;z-index:2}.harvest-scene{position:relative;z-index:1;width:100%;filter:drop-shadow(0 26px 34px rgba(0,0,0,.2))}
+    .harvest-scene svg{display:block;width:100%;height:auto}.signature{display:flex;align-items:center;gap:12px;margin-top:30px;color:#d8dfc7;font-size:.86rem}.signature:before{content:"";width:48px;height:1px;background:var(--gold)}
     h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.55rem,7vw,5.7rem);font-weight:500;line-height:.95;max-width:880px;margin:16px 0 24px;text-wrap:balance}
     .hero p{max-width:690px;font-size:clamp(1rem,2.2vw,1.25rem);color:#e8eadf;margin:0}
     .olive-line{display:flex;gap:10px;align-items:center;margin-top:32px;color:#ced8af;font-size:.9rem}.olive-line:before{content:"";width:64px;height:1px;background:#aeb98b}
     main{margin-top:-36px;position:relative;padding:0 20px 70px}
     .intro{background:var(--paper);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.65);padding:24px;border-radius:4px;margin-bottom:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
     .intro strong{color:var(--forest)}.stamp{border:1px solid var(--gold);color:#74501f;padding:10px 13px;text-align:center;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;transform:rotate(2deg)}
+    .story{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:46px;align-items:start;margin:58px 0 66px;padding:0 4px}.story-kicker{font-family:Georgia,serif;color:var(--rust);font-style:italic;font-size:1.12rem}.story h2{font-family:Georgia,serif;color:var(--forest);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:500;line-height:1.05;margin:0 0 18px}.story p{color:var(--muted);font-size:1.02rem;margin:0 0 24px}.ritual{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.ritual div{padding:18px 15px 18px 0}.ritual div+div{border-left:1px solid var(--line);padding-left:18px}.ritual b{display:block;color:var(--forest);font-family:Georgia,serif;font-size:1.05rem}.ritual span{font-size:.78rem;color:var(--muted)}
     .section-head{margin:46px 0 18px}.section-head h2{font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:500;margin:0;color:var(--forest)}.section-head p{margin:6px 0;color:var(--muted)}
     .options{display:grid;gap:18px}
     .option{display:block;position:relative;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:0;box-shadow:0 8px 28px rgba(35,53,31,.06);cursor:pointer;transition:.2s ease;overflow:hidden}
@@ -43,18 +47,38 @@
     .message-preview{margin-top:18px;padding:13px 15px;border-left:3px solid var(--gold);background:rgba(255,255,255,.07);font-size:.86rem;color:#e7eadf;white-space:pre-wrap}
     .note{margin:28px 0 0;padding:18px;border:1px dashed #b9b19d;color:var(--muted);font-size:.82rem;background:rgba(255,253,247,.55)}.note strong{color:var(--ink)}
     footer{padding:25px 20px 45px;text-align:center;color:var(--muted);font-size:.78rem}.leaf{color:var(--olive)}
-    @media(max-width:700px){.hero{padding-top:54px}.intro{grid-template-columns:1fr}.stamp{justify-self:start}.choice{grid-template-columns:1fr auto;gap:14px}.date{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}.price{grid-column:2}.route{grid-row:2;grid-column:1}.book{text-align:left}.actions .button{width:100%}}
+    @media(max-width:760px){.hero{padding-top:48px}.hero-grid{grid-template-columns:1fr;gap:26px}.harvest-scene{width:min(440px,100%);margin:auto}.intro{grid-template-columns:1fr}.stamp{justify-self:start}.story{grid-template-columns:1fr;gap:12px;margin:44px 0}.ritual{grid-template-columns:1fr}.ritual div+div{border-left:0;border-top:1px solid var(--line);padding-left:0}.choice{grid-template-columns:1fr auto;gap:14px}.date{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}.price{grid-column:2}.route{grid-row:2;grid-column:1}.book{text-align:left}.actions .button{width:100%}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
     @media print{.hero{padding:35px 20px}.feedback,.book{display:none}main{margin-top:0}.option{break-inside:avoid;box-shadow:none}}
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Hamburg → Porto · Olivenernte 2026</div>
-      <h1>Hallo Alex, ich bin Sariana.</h1>
-      <p>Ich bin Emidios persönliche KI-Assistentin. Emidio hat mich gebeten, die günstigsten Flüge für das letzte Novemberwochenende oder das erste Dezemberwochenende herauszusuchen. Das hier ist mein Ergebnis.</p>
-      <div class="olive-line">Persönlich für dich zusammengestellt</div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Hamburg → Porto · Erntezeit 2026</div>
+        <h1>Olivenernte in Portugal</h1>
+        <p>Hallo Alex, ich bin Sariana, Emidios persönliche KI-Assistentin. Emidio hat mich gebeten, die günstigsten Flüge für das letzte Novemberwochenende oder das erste Dezemberwochenende herauszusuchen. Das hier ist mein Ergebnis für euch.</p>
+        <div class="signature">Persönlich zusammengestellt von Emidio und Sariana</div>
+      </div>
+      <div class="harvest-scene" aria-label="Illustration einer traditionellen portugiesischen Olivenernte">
+        <svg viewBox="0 0 520 430" role="img" aria-labelledby="sceneTitle sceneDesc">
+          <title id="sceneTitle">Traditionelle Olivenernte</title>
+          <desc id="sceneDesc">Ein alter Olivenbaum, unter dessen Krone Netze liegen. Eine lange Erntestange reicht in die Zweige.</desc>
+          <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#526046"/><stop offset="1" stop-color="#2d4028"/></linearGradient></defs>
+          <path d="M36 344C122 316 388 318 486 352L461 401H66Z" fill="#c7ad72" opacity=".92"/>
+          <path d="M76 352l137-28 90 18-111 54zm126 44 101-54 142 20-86 39z" fill="none" stroke="#eee1bd" stroke-width="3" opacity=".9"/>
+          <path d="M246 332c7-52-2-96-17-137 28 20 43 48 48 79 11-39 30-70 54-94-19 47-25 99-14 154z" fill="#6d5135"/>
+          <path d="M264 277c-18-89-68-146-126-157m148 133c17-92 70-142 135-156M248 227c-54-48-112-62-167-42m204 26c47-57 99-78 158-66" fill="none" stroke="#73583a" stroke-width="13" stroke-linecap="round"/>
+          <g fill="#7d8b48" stroke="#aeb98b" stroke-width="2">
+            <ellipse cx="126" cy="114" rx="72" ry="50"/><ellipse cx="199" cy="99" rx="80" ry="57"/><ellipse cx="286" cy="103" rx="83" ry="60"/><ellipse cx="379" cy="105" rx="78" ry="53"/><ellipse cx="105" cy="180" rx="71" ry="52"/><ellipse cx="191" cy="169" rx="82" ry="60"/><ellipse cx="291" cy="170" rx="89" ry="62"/><ellipse cx="393" cy="166" rx="76" ry="54"/>
+          </g>
+          <g fill="#303a20"><circle cx="103" cy="141" r="6"/><circle cx="151" cy="182" r="6"/><circle cx="194" cy="128" r="6"/><circle cx="232" cy="178" r="6"/><circle cx="304" cy="130" r="6"/><circle cx="354" cy="184" r="6"/><circle cx="410" cy="137" r="6"/><circle cx="273" cy="81" r="6"/><circle cx="169" cy="75" r="6"/></g>
+          <path d="M450 55L319 292" stroke="#d8c59a" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="313" cy="315" r="17" fill="#9c4f32"/><path d="M311 332l-20 54m20-54 27 49m-15-28 31-17m-54 13-29-8" fill="none" stroke="#e8dfc8" stroke-width="8" stroke-linecap="round"/>
+          <g fill="#20291c"><circle cx="185" cy="354" r="5"/><circle cx="225" cy="372" r="5"/><circle cx="267" cy="352" r="5"/><circle cx="344" cy="374" r="5"/><circle cx="381" cy="354" r="5"/></g>
+        </svg>
+      </div>
     </div>
   </header>
 
@@ -62,6 +86,19 @@
     <section class="intro">
       <div><strong>Lieber Alex,</strong> schau dir die vier Möglichkeiten in Ruhe an. Wähle deinen Favoriten und teile Emidio anschließend über den Button deine Tendenz mit.<br><br><strong>Der Rahmen:</strong> 1 Erwachsener · Economy · ein Handgepäck-Trolley · jeweils 7 Nächte. Direktflüge wurden bevorzugt, sind an diesen exakten Wochenendpaaren aktuell aber nicht verfügbar.</div>
       <div class="stamp">Olivenernte<br>Portugal 2026</div>
+    </section>
+
+    <section class="story">
+      <div class="story-kicker">Ein Ritual, das jedes Jahr wiederkehrt.</div>
+      <div>
+        <h2>Wenn die Oliven fallen, beginnt die eigentliche Geschichte.</h2>
+        <p>Unter den alten Olivenbäumen werden die Netze ausgebreitet. Mit langen Stangen lösen sich die reifen Früchte aus den Zweigen und fallen auf die Tücher darunter. Es ist traditionelle Handarbeit – ruhig, gemeinschaftlich und fest mit Emidios Portugal verbunden.</p>
+        <div class="ritual">
+          <div><b>Netze auslegen</b><span>unter der ganzen Baumkrone</span></div>
+          <div><b>Zweige abklopfen</b><span>mit der langen Erntestange</span></div>
+          <div><b>Oliven sammeln</b><span>gemeinsam für die nächste Ernte</span></div>
+        </div>
+      </div>
     </section>
 
     <div class="section-head"><h2>Mein Ergebnis für euch</h2><p>Wähle die Verbindung, zu der du am ehesten tendierst.</p></div>
