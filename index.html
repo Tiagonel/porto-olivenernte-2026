@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#23351f">
+  <title>Hallo Alex – unsere Reise zur Olivenernte</title>
+  <style>
+    :root{
+      --forest:#23351f;--olive:#66733a;--sage:#aeb98b;--cream:#f5f0e3;
+      --paper:#fffdf7;--ink:#20231c;--muted:#686b5e;--line:#ddd6c3;
+      --gold:#bd873b;--rust:#9c4f32;--shadow:0 18px 50px rgba(35,53,31,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;background:
+      radial-gradient(circle at 10% 10%,rgba(174,185,139,.35),transparent 28rem),
+      radial-gradient(circle at 90% 30%,rgba(189,135,59,.12),transparent 24rem),var(--cream)}
+    .hero{position:relative;overflow:hidden;color:#fff;background:var(--forest);padding:72px 20px 84px}
+    .hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.15);border-radius:50%;transform:rotate(-18deg)}
+    .hero:before{width:420px;height:150px;right:-130px;top:30px}.hero:after{width:310px;height:110px;left:-120px;bottom:10px}
+    .wrap{width:min(980px,100%);margin:auto}.eyebrow{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:#d7dfbe;font-weight:800}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.55rem,7vw,5.7rem);font-weight:500;line-height:.95;max-width:880px;margin:16px 0 24px;text-wrap:balance}
+    .hero p{max-width:690px;font-size:clamp(1rem,2.2vw,1.25rem);color:#e8eadf;margin:0}
+    .olive-line{display:flex;gap:10px;align-items:center;margin-top:32px;color:#ced8af;font-size:.9rem}.olive-line:before{content:"";width:64px;height:1px;background:#aeb98b}
+    main{margin-top:-36px;position:relative;padding:0 20px 70px}
+    .intro{background:var(--paper);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.65);padding:24px;border-radius:4px;margin-bottom:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+    .intro strong{color:var(--forest)}.stamp{border:1px solid var(--gold);color:#74501f;padding:10px 13px;text-align:center;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;transform:rotate(2deg)}
+    .section-head{margin:46px 0 18px}.section-head h2{font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:500;margin:0;color:var(--forest)}.section-head p{margin:6px 0;color:var(--muted)}
+    .options{display:grid;gap:18px}
+    .option{display:block;position:relative;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:0;box-shadow:0 8px 28px rgba(35,53,31,.06);cursor:pointer;transition:.2s ease;overflow:hidden}
+    .option:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.option:has(input:checked){border-color:var(--olive);box-shadow:0 0 0 3px rgba(102,115,58,.17),var(--shadow)}
+    .option input{position:absolute;opacity:0;pointer-events:none}.choice{display:grid;grid-template-columns:152px 1fr auto;gap:22px;padding:22px;align-items:start}
+    .date{border-right:1px solid var(--line);padding-right:22px}.date .month{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--rust);font-weight:800}.date .days{font-family:Georgia,serif;font-size:1.52rem;line-height:1.15;color:var(--forest);margin:5px 0}.date .nights{font-size:.82rem;color:var(--muted)}
+    .route h3{margin:0 0 8px;font-size:1.1rem;color:var(--forest)}.route p{margin:4px 0;color:var(--muted);font-size:.92rem}.route b{color:var(--ink)}
+    .price{text-align:right;white-space:nowrap}.price small{display:block;color:var(--muted);font-size:.72rem}.price strong{font-family:Georgia,serif;font-size:1.85rem;color:var(--forest);font-weight:500}.price .radio{margin:12px 0 0 auto;width:24px;height:24px;border:2px solid var(--sage);border-radius:50%;display:grid;place-items:center}.option:has(input:checked) .radio:after{content:"";width:12px;height:12px;border-radius:50%;background:var(--olive)}
+    .tag{display:inline-flex;margin-top:9px;padding:4px 9px;border-radius:99px;background:#e8ecd9;color:#465027;font-size:.75rem;font-weight:750}.tag.warn{background:#f5e5d9;color:#7b3d29}
+    .book{display:block;border-top:1px solid var(--line);padding:11px 22px;text-align:right;color:var(--olive);font-size:.82rem;font-weight:800;text-decoration:none}.book:hover{text-decoration:underline}
+    .feedback{margin-top:38px;background:var(--forest);color:#fff;padding:clamp(24px,5vw,42px);border-radius:4px;box-shadow:var(--shadow)}.feedback h2{font-family:Georgia,serif;font-weight:500;font-size:2rem;margin:0 0 8px}.feedback p{color:#dce2d2;margin-top:0}
+    textarea{width:100%;min-height:110px;border:1px solid #839071;border-radius:3px;padding:14px;font:inherit;background:#fbf9f2;color:var(--ink);resize:vertical}textarea:focus{outline:3px solid rgba(189,135,59,.35);border-color:var(--gold)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}.button{min-height:48px;border:0;border-radius:3px;padding:13px 18px;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--gold);color:#1f281b}.secondary{background:transparent;border:1px solid #91a07e;color:#fff}.button:hover{filter:brightness(1.06)}
+    .message-preview{margin-top:18px;padding:13px 15px;border-left:3px solid var(--gold);background:rgba(255,255,255,.07);font-size:.86rem;color:#e7eadf;white-space:pre-wrap}
+    .note{margin:28px 0 0;padding:18px;border:1px dashed #b9b19d;color:var(--muted);font-size:.82rem;background:rgba(255,253,247,.55)}.note strong{color:var(--ink)}
+    footer{padding:25px 20px 45px;text-align:center;color:var(--muted);font-size:.78rem}.leaf{color:var(--olive)}
+    @media(max-width:700px){.hero{padding-top:54px}.intro{grid-template-columns:1fr}.stamp{justify-self:start}.choice{grid-template-columns:1fr auto;gap:14px}.date{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}.price{grid-column:2}.route{grid-row:2;grid-column:1}.book{text-align:left}.actions .button{width:100%}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+    @media print{.hero{padding:35px 20px}.feedback,.book{display:none}main{margin-top:0}.option{break-inside:avoid;box-shadow:none}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Hamburg → Porto · Olivenernte 2026</div>
+      <h1>Hallo Alex, ich bin Sariana.</h1>
+      <p>Ich bin Emidios persönliche KI-Assistentin. Emidio hat mich gebeten, die günstigsten Flüge für das letzte Novemberwochenende oder das erste Dezemberwochenende herauszusuchen. Das hier ist mein Ergebnis.</p>
+      <div class="olive-line">Persönlich für dich zusammengestellt</div>
+    </div>
+  </header>
+
+  <main><div class="wrap">
+    <section class="intro">
+      <div><strong>Lieber Alex,</strong> schau dir die vier Möglichkeiten in Ruhe an. Wähle deinen Favoriten und teile Emidio anschließend über den Button deine Tendenz mit.<br><br><strong>Der Rahmen:</strong> 1 Erwachsener · Economy · ein Handgepäck-Trolley · jeweils 7 Nächte. Direktflüge wurden bevorzugt, sind an diesen exakten Wochenendpaaren aktuell aber nicht verfügbar.</div>
+      <div class="stamp">Olivenernte<br>Portugal 2026</div>
+    </section>
+
+    <div class="section-head"><h2>Mein Ergebnis für euch</h2><p>Wähle die Verbindung, zu der du am ehesten tendierst.</p></div>
+
+    <form id="flightForm">
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="flight" value="29.11.–06.12. · TAP via Lissabon · ab 169 €" required>
+          <div class="choice">
+            <div class="date"><div class="month">Empfehlung · So–So</div><div class="days">29. Nov. – 6. Dez.</div><div class="nights">7 Nächte</div></div>
+            <div class="route"><h3>TAP Air Portugal · über Lissabon</h3><p><b>Hin:</b> 12:40 HAM → 18:00 OPO</p><p><b>Rück:</b> z. B. 05:00 OPO → 11:50 HAM</p><span class="tag">Günstigste Gesamtoption</span></div>
+            <div class="price"><small>Hin & zurück ab</small><strong>169 €</strong><div class="radio"></div></div>
+          </div>
+          <a class="book" target="_blank" rel="noopener" href="https://www.google.com/travel/flights?hl=en-US&curr=EUR&tfs=GhoSCjIwMjYtMTEtMjlqBRIDSEFNcgUSA09QTxoaEgoyMDI2LTEyLTA2agUSA09QT3IFEgNIQU1IAUIBAWoCEAGYAQE=">Aktuellen Preis bei Google Flights prüfen →</a>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="flight" value="28.11.–05.12. · Air France via Paris · ab 186 €">
+          <div class="choice">
+            <div class="date"><div class="month">Alternative · Sa–Sa</div><div class="days">28. Nov. – 5. Dez.</div><div class="nights">7 Nächte</div></div>
+            <div class="route"><h3>Air France · über Paris-CDG</h3><p><b>Hin:</b> 16:00 HAM → 22:00 OPO</p><p><b>Rück:</b> z. B. 11:30 OPO → 17:45 HAM</p><span class="tag">Gute Samstagsoption</span></div>
+            <div class="price"><small>Hin & zurück ab</small><strong>186 €</strong><div class="radio"></div></div>
+          </div>
+          <a class="book" target="_blank" rel="noopener" href="https://www.google.com/travel/flights?hl=en-US&curr=EUR&tfs=GhoSCjIwMjYtMTEtMjhqBRIDSEFNcgUSA09QTxoaEgoyMDI2LTEyLTA1agUSA09QT3IFEgNIQU1IAUIBAWoCEAGYAQE=">Aktuellen Preis bei Google Flights prüfen →</a>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="flight" value="06.12.–13.12. · KLM via Amsterdam · ab 199 €">
+          <div class="choice">
+            <div class="date"><div class="month">Eine Woche später · So–So</div><div class="days">6. – 13. Dezember</div><div class="nights">7 Nächte</div></div>
+            <div class="route"><h3>KLM · über Amsterdam</h3><p><b>Hin:</b> 06:10 HAM → 10:30 OPO</p><p><b>Rück:</b> z. B. 11:15 OPO → 17:55 HAM</p><span class="tag">Frühe Ankunft in Porto</span></div>
+            <div class="price"><small>Hin & zurück ab</small><strong>199 €</strong><div class="radio"></div></div>
+          </div>
+          <a class="book" target="_blank" rel="noopener" href="https://www.google.com/travel/flights?hl=en-US&curr=EUR&tfs=GhoSCjIwMjYtMTItMDZqBRIDSEFNcgUSA09QTxoaEgoyMDI2LTEyLTEzagUSA09QT3IFEgNIQU1IAUIBAWoCEAGYAQE=">Aktuellen Preis bei Google Flights prüfen →</a>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="flight" value="05.12.–12.12. · Lufthansa via München · ab 216 €">
+          <div class="choice">
+            <div class="date"><div class="month">Eine Woche später · Sa–Sa</div><div class="days">5. – 12. Dezember</div><div class="nights">7 Nächte</div></div>
+            <div class="route"><h3>Lufthansa · über München</h3><p><b>Hin:</b> 06:15 HAM → 12:50 OPO</p><p><b>Rück:</b> z. B. 13:45 OPO → 20:05 HAM</p><span class="tag warn">Teuerste, aber solide Zeiten</span></div>
+            <div class="price"><small>Hin & zurück ab</small><strong>216 €</strong><div class="radio"></div></div>
+          </div>
+          <a class="book" target="_blank" rel="noopener" href="https://www.google.com/travel/flights?hl=en-US&curr=EUR&tfs=GhoSCjIwMjYtMTItMDVqBRIDSEFNcgUSA09QTxoaEgoyMDI2LTEyLTEyagUSA09QT3IFEgNIQU1IAUIBAWoCEAGYAQE=">Aktuellen Preis bei Google Flights prüfen →</a>
+        </label>
+      </div>
+
+      <section class="feedback" id="feedback">
+        <h2>Alex, was meinst du?</h2>
+        <p>Wähle oben einen Flug aus und teile Emidio deine Tendenz mit. Du kannst noch ergänzen, was dir bei Zeiten oder Preis wichtig ist.</p>
+        <label for="comment" class="eyebrow">Dein Kommentar (optional)</label>
+        <textarea id="comment" placeholder="Zum Beispiel: Der Sonntag passt mir besser, aber ich würde gern später zurückfliegen …"></textarea>
+        <div class="message-preview" id="preview">Noch keine Verbindung ausgewählt.</div>
+        <div class="actions">
+          <button class="button primary" type="submit">Über das Handy teilen</button>
+          <button class="button secondary" type="button" id="copyButton">Nachricht kopieren</button>
+        </div>
+      </section>
+    </form>
+
+    <aside class="note"><strong>Preisstand: 6. September 2026, 11:16 UTC.</strong> Die Preise stammen aus Google Flights für eine Person in Economy mit einem Handgepäck-Trolley und können sich jederzeit ändern. „Ab“-Preise und die gezeigten Zeiten müssen vor der Buchung noch einmal im verlinkten Angebot bestätigt werden. Die Rückflugzeiten sind passende, separat geprüfte Verbindungen derselben Airline; die endgültige Kombination wird nach Auswahl des Hinflugs angezeigt. Bei den exakten Samstag-/Sonntag-Paaren wurde aktuell keine durchgehend direkte Hin-und-Rückverbindung gefunden.</aside>
+  </div></main>
+
+  <footer><span class="leaf">●</span> Zusammengestellt für Alex und Emidio · Olivenernte in Portugal 2026</footer>
+
+  <script>
+    const form = document.getElementById('flightForm');
+    const preview = document.getElementById('preview');
+    const comment = document.getElementById('comment');
+    const copyButton = document.getElementById('copyButton');
+
+    function buildMessage() {
+      const selected = form.querySelector('input[name="flight"]:checked');
+      if (!selected) return '';
+      const extra = comment.value.trim();
+      return `Hallo Emidio,\n\nich habe mir die Flugübersicht für unsere Olivenernte-Reise angesehen. Ich tendiere zu:\n\n${selected.value}\n${extra ? `\nMein Kommentar: ${extra}\n` : ''}\nLass uns dazu abstimmen.\n\n– Alex`;
+    }
+
+    function updatePreview() {
+      const message = buildMessage();
+      preview.textContent = message || 'Noch keine Verbindung ausgewählt.';
+    }
+
+    form.addEventListener('change', updatePreview);
+    comment.addEventListener('input', updatePreview);
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const message = buildMessage();
+      if (!message) {
+        alert('Bitte wähle zuerst eine Flugverbindung aus.');
+        return;
+      }
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Unsere Reise zur Olivenernte',
+            text: message
+          });
+          return;
+        } catch (error) {
+          if (error.name === 'AbortError') return;
+        }
+      }
+      try {
+        await navigator.clipboard.writeText(message);
+        alert('Das Teilen-Menü ist hier nicht verfügbar. Die Nachricht wurde kopiert – öffne WhatsApp und füge sie in Emidios Chat ein.');
+      } catch {
+        prompt('Nachricht kopieren und in WhatsApp an Emidio senden:', message);
+      }
+    });
+
+    copyButton.addEventListener('click', async () => {
+      const message = buildMessage();
+      if (!message) {
+        alert('Bitte wähle zuerst eine Flugverbindung aus.');
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(message);
+        copyButton.textContent = 'Nachricht kopiert ✓';
+        setTimeout(() => copyButton.textContent = 'Nachricht kopieren', 1800);
+      } catch {
+        prompt('Nachricht kopieren:', message);
+      }
+    });
+  </script>
+</body>
+</html>
